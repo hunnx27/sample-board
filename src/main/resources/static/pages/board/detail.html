@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>상세</title>
+<!-- plugins:css -->
+<link rel="stylesheet"
+	href="../../common/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet"
+	href="../../common/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+<link rel="stylesheet"
+	href="../../common/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+<link rel="stylesheet"
+	href="../../common/assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet"
+	href="../../common/assets/vendors/css/vendor.bundle.addons.css">
+<!-- endinject -->
+<!-- plugin css for this page -->
+<link rel="stylesheet"
+	href="../../common/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="../../common/assets/css/shared/style.css">
+<!-- endinject -->
+<!-- Layout styles -->
+<link rel="stylesheet" href="../../common/assets/css/demo_1/style.css">
+<!-- End Layout styles -->
+<link rel="shortcut icon" href="../../common/assets/images/favicon.ico" />
+
+<!-- page 결합 -->
+<script src="../../common/assets/js/shared/includeHTML.js"></script>
+
+<script>
+
+</script>
+</head>
+
+<body>
+	<div class="container-scroller">
+		<!-- partial nav_top -->
+		<nav id="nav_top"
+			class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row"></nav>
+
+		<!-- partial sidebar-->
+		<div class="container-fluid page-body-wrapper">
+			<nav class="sidebar sidebar-offcanvas" id="sidebar"></nav>
+
+			<!-- partial main contents-->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-lg-8 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h2>게시판 수정</h2>
+									<p class="card-description">
+										게시판 정보를 입력하세요.
+										<!-- <code>.table-striped</code> 빨간 글자로 나옴-->
+									</p>
+									<br>
+									<form class="forms-sample" id="updateForm">
+										<div class="form-group row" style="display:none;">
+											<label for="classify" class="col-sm-2 col-form-label">uid</label>
+											<div class="col-sm-2">
+												<input type="text" class="form-control" id="board_uid" name="uid">
+											</div>
+										</div>										
+										<div class="form-group row">
+											<label for="title" class="col-sm-2 col-form-label">채널ID</label>
+											<div class="col-sm-2">
+												<input type="text" class="form-control" id="채널ID" name="채널ID">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="title" class="col-sm-2 col-form-label">채널명</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="채널명" name="채널명">
+											</div>
+										</div>
+										
+										<div class="form-group row">
+											<label for="title" class="col-sm-2 col-form-label">설명</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="설명" name="설명">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">훅주소</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="훅주소" name="훅주소">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">사용여부</label>
+											<div class="col-sm-2">
+												<select class="form-control" id="사용여부" name="사용여부">
+													<option id="Y">Y</option>
+													<option id="Y">Y</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">등록자</label>
+											<div class="col-sm-2">
+												<input type="text" class="form-control" id="등록자" name="등록자">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">등록일</label>
+											<div class="col-sm-2">
+												<input type="date" class="form-control" id="등록일" name="등록일">
+ 											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">수정자</label>
+											<div class="col-sm-2">
+												<input type="text" class="form-control" id="수정자" name="수정자">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="classify" class="col-sm-2 col-form-label">수정일</label>
+											<div class="col-sm-2">
+												<input type="date" class="form-control" id="수정일" name="수정일">
+ 											</div>
+										</div>
+									</form>
+									<button type="button" class="btn btn-success mr-2" id="re">수정하기</button>
+									<button type="button" class="btn btn-light"
+										onclick="location.href='./list.html'">취소</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-8 grid-margin stretch-card" style="display: none;">
+							<div class="card">
+								<div class="card-body">
+									<h3>댓글&nbsp;&nbsp;<span id="memo_cnt" style="color:red;"></span></h3>
+									<br>
+									<form class="forms-sample" onsubmit="return false">
+										<div class="form-group row">
+											<label for="memo_writer" class="col-sm-1 col-form-label">이름</label>
+											<div class="col-sm-2">
+												<input type="text" class="form-control" id="memo_writer">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="memo_contents" class="col-sm-1 col-form-label">내용</label>
+											<textarea class="form-contorl" id="memo_contents"
+												style="margin-left: 12px; width: 83%; height: 100px; padding: 10px;"
+												placeholder="댓글을 입력하시기 바랍니다."></textarea>
+											<button id="btnMemo" class="btn btn-primary">댓글<br><br>쓰기</button>
+											<div class="toast" id="myToast" style="position: absolute; top: 60px; right:10px;">
+											        <div class="toast-header">
+											            <strong class="mr-auto"><i class="fa fa-check"></i> 시은 HOMEPAGE &nbsp;&nbsp;&nbsp;	</strong>
+											            <small>방금 전</small>
+											            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+											                <span aria-hidden="true">&times;</span>
+											            </button>
+											        </div>
+											        <div class="toast-body">
+											            <div>등록되었습니다 :)</div>
+											        </div>
+											    </div>
+										</div>
+									</form>
+									<table class="table" id="memoList" style="text-align: center;">
+										<colgroup>
+											<col width="5%" />
+											<col width="25%" />
+											<col width="10%" />
+											<col width="5%" />
+										</colgroup>
+										<thead>
+										</thead>
+										<tbody id="tbody_memo">
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- partial:../partials/_footer.html -->
+				<footer class="footer" id="footer">
+				<!-- partial -->
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+	<!-- plugins:js -->
+	<script src="../../common/assets/vendors/js/vendor.bundle.base.js"></script>
+	<script src="../../common/assets/vendors/js/vendor.bundle.addons.js"></script>
+
+	<!-- endinject -->
+	<!-- Plugin js for this page-->
+	<!-- End plugin js for this page-->
+	<!-- inject:js -->
+	<script src="../../common/assets/js/shared/off-canvas.js"></script>
+	<script src="../../common/assets/js/shared/misc.js"></script>
+	<!-- endinject -->
+	<!-- Custom js for this page-->
+	<script src="../../common/assets/js/shared/jquery.cookie.js"
+		type="text/javascript"></script>
+	<!-- End custom js for this page-->
+
+	<!-- web-utils -->
+	<script src="../../common/assets/js/shared/web-utils.js"></script>
+
+	<script>
+		//page 결합 호출
+		includeHTML();
+
+		var p_uid = getParam("uid");
+
+		// url 에서 parameter 추출
+		function getParam(sname) {
+			var params = location.search
+					.substr(location.search.indexOf("?") + 1);
+			var sval = "";
+			params = params.split("&");
+
+			for (var i = 0; i < params.length; i++) {
+				temp = params[i].split("=");
+				if ([ temp[0] ] == sname) {
+					sval = temp[1];
+				}
+			}
+			return sval;
+		}
+
+		function fnDelete(obj){
+
+			var uidnum = $(obj).parent().parent().children().eq(0).text();
+
+			var data1={ board_uid: p_uid }
+
+			if (confirm("삭제하시겠습니까?")){
+				ajaxCommon('/boardmemo/'+uidnum , 'DELETE', 'json', data1, ajaxCommonMemoDeleteList);
+				function ajaxCommonMemoDeleteList(data) {
+
+					alert("삭제되었습니다 !!");
+					ajaxCommon('/boardmemo', 'GET', 'json', data1, ajaxCommonMemoAfterList);
+				}
+
+			}
+
+		}
+
+
+		function ajaxCommonUpdateList(data) {
+
+			alert("수정완료되었습니다.");
+			location.href = './list.html';
+
+		}
+
+		function ajaxCommonDetailList(data) {
+
+	
+			for (var i = 0; i < data.list.length; i++) {
+
+				//json 데이터를 input key를 찾아서 값을 넣음
+				var json = data.list[i]; 				
+				var keys = Object.keys(json);
+				keys.forEach(function(key){
+					//result.push(json[key]);
+					value = json[key]; 
+					$("#"+ key).val(value);
+				});
+
+			}
+
+		}
+
+				function ajaxCommonMemoList(data) {
+
+					var data1={ board_uid: p_uid }
+					ajaxCommon('/boardmemo', 'GET', 'json', data1, ajaxCommonMemoAfterList);
+				}
+
+
+				function ajaxCommonMemoAfterList(data) {
+
+					$('#tbody_memo').empty();
+
+					for (var i = 0; i < data.list.length; i++) {
+
+						var tr = "";
+
+						tr += '<tr>\n';
+ 						tr += '<td id="memo_uid" style="display:none;">'+data.list[i].memo_uid+'</td>\n'
+						tr += '<td id="memolist_writer" style="font-weight: bold;">'+data.list[i].memo_writer+'</td>\n';
+						tr += '<td id="memolist_contents" style="text-align: left;">'+data.list[i].memo_contents+'</td>\n';
+						tr += '<td id="memolist_date">'+data.list[i].memo_date+'</td>\n';
+						tr += '<td><button type="button" id="memo_delete" onclick="javascript:fnDelete(this)" style="color: red; border: 0px; background: white;">\n';
+						tr += '<i class="fa fa-trash-o"></i>삭제</button></td></tr>\n';
+
+						$('#tbody_memo').append(tr);
+						$("#memo_cnt").empty();
+						$("#memo_cnt").append($("#tbody_memo tr").length);
+						$("#memo_writer").val("");
+						$("#memo_contents").val("");
+
+					}
+				}
+
+		$(document).ready(function() {
+
+					var data = { board_uid : p_uid };
+					ajaxCommon('/board1', 'GET', 'json', data, ajaxCommonDetailList);
+
+					//수정하기 버튼 함수
+					$("#re").click(function() {
+						
+						var data = $( "#updateForm").serializeArray();
+
+						ajaxCommon('/board', 'PUT', 'json', data, ajaxCommonUpdateList);
+
+					});
+
+					//댓글 쓰기 버튼 함수
+					$("#btnMemo").click(function(){
+
+// 						var isOK = true;										//유효성검증 - validation
+
+// 						//필드 필수 값 체크
+// 						if ($("#memo_writer").val() == "") {
+
+// 							alert("이름은 필수입니다..");
+// 							isOK = false;
+// 						}
+
+// 						if ($("#memo_contents").val() == "") {
+
+// 							alert("내용은 필수입니다..");
+// 							isOK = false;
+// 						}
+
+// 						if (isOK){
+							//toast 창 보이기
+							$("#myToast").toast({ delay: 3000 });
+					        $("#myToast").toast('show');
+
+							var data = {
+									board_uid: p_uid,
+									memo_writer: $("#memo_writer").val(),
+									memo_contents: $("#memo_contents").val()
+									};
+
+							ajaxCommon('/boardmemo', 'POST', 'json', data, ajaxCommonMemoList);
+// 						}
+
+
+					});
+
+				});
+	</script>
+
+</body>
+
+</html>

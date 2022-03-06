@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+	<select id="insertBoard" resultType="hashMap">
+		INSERT INTO board ( title, context, use_yn, crtr_user, crtr_datetime, upd_user, upd_datetime)
+		VALUES (#{title}, #{context}, #{use_yn}, #{crtr_user}, #{crtr_datetime}, #{upd_user}, #{upd_datetime})
+	</select>
+
+	<select id="readBoard" resultType="hashMap">
+		SELECT * FROM board
+		ORDER BY uid DESC
+	</select>
+
+	<select id="boardCnt" resultType="hashMap">
+		SELECT count(1) as tot_cnt FROM board
+	</select>
+
+	<select id="readBoard1" resultType="hashMap">
+		SELECT * FROM board where uid = #{uid}
+	</select>
+
+	<select id="readBoard1ByCID" resultType="hashMap">
+		SELECT
+			uid, title, context, use_yn, crtr_user, crtr_datetime, upd_user, upd_datetime
+		FROM board
+		WHERE "채널ID" = #{채널ID}
+		ORDER BY 수정일 DESC
+		limit 1
+	</select>
+
+	<select id="deleteBoard" resultType="hashMap">
+		DELETE FROM board where uid = ${uid}
+	</select>
+
+	<select id="updateBoard" resultType="hashMap">
+		update board
+		set
+			title = #{title}
+			, context = #{context}
+			, use_yn = #{use_yn}
+			, crtr_user = #{crtr_user}
+			, crtr_datetime = now()
+			, upd_user = #{upd_user}
+			, upd_datetime = now()
+		where uid = #{uid}
+	</select>
+
+
+</mapper>
+
